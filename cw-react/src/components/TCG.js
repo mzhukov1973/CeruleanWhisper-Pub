@@ -15,65 +15,16 @@
 /****************************************************************************/
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-/*[RT2====>*/
-//import { ThemeProvider as RT2ThemeProvider } from 'react-toolbox/lib/ThemeProvider'
-//import { ThemeProvider as RT2ThemeProvider } from 'react-css-themr'
-//import {Input as RT2Input} from 'react-toolbox/lib/input';
-//import { RadioButton as RT2RadioButton} from 'react-toolbox/lib/radio/RadioButton'
-//import { RadioGroup as RT2RadioGroup} from 'react-toolbox/lib/radio/RadioGroup'
-/*<====RT2]*/
-/*[EUI====>*/
-import { Button as EUIButton, FormSelect as EUIFormSelect } from 'elemental' 
-//import { InputGroup as EUIInputGroup } from 'elemental' 
-import { Radio as EUIRadio } from 'elemental'
-//import { FormInput as EUIFormInput } from 'elemental'
-/*<====EUI]*/
-/*[RBS====>*/ /*RBS = React-Bootstrap*/
-//import { RadioButton as RBSRadioButton, RadioGroup as RBSRadioGroup} from 'react-bootstrap';
-/*<====RBS]*/
-/*[Onsen====>*/
-//import * as ons from 'onsenui';
-//import * as Ons from 'react-onsenui';
-/*<====Onsen]*/
+import { Radio as EUIRadio, Button as EUIButton, FormSelect as EUIFormSelect } from 'elemental' 
 /*[mui====>*/
-//import RaisedButton from 'material-ui/RaisedButton'
-//import { RadioButton as MUIRadioButton, RadioButtonGroup as MUIRadioGroup } from 'material-ui/RadioButton';
 import TextField from 'material-ui/TextField'
-//import SelectField from 'material-ui/SelectField'
-//import MenuItem from 'material-ui/MenuItem'
-//import CircularProgress from 'material-ui/CircularProgress'
 import SMSSendIcon from 'mui-icons/fontawesome/envelope-o'
-//import SMSSendIcon from 'mui-icons/cmdi/email-outline'
-//import SMSSendIcon from 'mui-icons/mdi/phone-forwarded'
-//import SMSSendIcon from 'mui-icons/mdi/perm-phone-msg'
-//import SMSSendIconErr from 'mui-icons/mdi/sms-failed'
-//====
-//import SMSSendIconSpin from 'mui-icons/mdi/smartphone'
-//import SMSSendIcon from 'mui-icons/mdi/phonelink-ring'
-//import SMSSendIconErr from 'mui-icons/mdi/phonelink-erase'
-//====
 import QRGenIcon from 'mui-icons/cmdi/qrcode'
 import QRReadIcon from 'mui-icons/cmdi/qrcode-scan'
 /*<====mui]*/
+import 'css/elemental-ui.styles.min.css'
 import './TCG.css'
-/*[mui====>
-const itemsSel = [
-  <MenuItem key={1}  value='100'     primaryText='txt100'   innerDivStyle={{padding:'0 1.6em'}}/>,
-  <MenuItem key={2}  value='200'     primaryText='txt200'   innerDivStyle={{padding:'0 1.6em'}}/>,
-  <MenuItem key={3}  value='300'     primaryText='txt300'   innerDivStyle={{padding:'0 1.6em'}}/>,
-  <MenuItem key={4}  value='400'     primaryText='txt400'   innerDivStyle={{padding:'0 1.6em'}}/>,
-  <MenuItem key={5}  value='500'     primaryText='txt500'   innerDivStyle={{padding:'0 1.6em'}}/>,
-  <MenuItem key={6}  value='600'     primaryText='txt600'   innerDivStyle={{padding:'0 1.6em'}}/>,
-  <MenuItem key={7}  value='700'     primaryText='txt700'   innerDivStyle={{padding:'0 1.6em'}}/>,
-  <MenuItem key={8}  value='800'     primaryText='txt800'   innerDivStyle={{padding:'0 1.6em'}}/>,
-  <MenuItem key={9}  value='900'     primaryText='txt900'   innerDivStyle={{padding:'0 1.6em'}}/>,
-  <MenuItem key={10} value='1000'    primaryText='txt1000'  innerDivStyle={{padding:'0 1.6em'}}/>,
-  <MenuItem key={11} value='1100'    primaryText='txt1100'  innerDivStyle={{padding:'0 1.6em'}}/>,
-  <MenuItem key={12} value='qrData'  primaryText='qrData'   innerDivStyle={{padding:'0 1.6em'}}/>,
-  <MenuItem key={13} value='usrData' primaryText='User-def' innerDivStyle={{padding:'0 1.6em'}}/>
-];
-<====mui]*/
-/*[EUI====>*/
+
 const itemsSel = [
                   {label:'txt100',   value:'100'},
                   {label:'txt200',   value:'200'},
@@ -89,24 +40,6 @@ const itemsSel = [
                   {label:'qrData',   value:'qrData'},
                   {label:'User-def', value:'usrData'}
                  ];
-/*<====EUI]*/
-/*[Onsen====>
-const itemsSel = [
-            <option value='100'>txt100</option>,
-            <option value='100'>txt200</option>,
-            <option value='100'>txt300</option>,
-            <option value='100'>txt400</option>,
-            <option value='100'>txt500</option>,
-            <option value='100'>txt600</option>,
-            <option value='100'>txt700</option>,
-            <option value='100'>txt800</option>,
-            <option value='100'>txt900</option>,
-            <option value='100'>txt1000</option>,
-            <option value='100'>txt1100</option>,
-            <option value='qrData'>qrData</option>,
-            <option value='usrData'>User-def</option>
-];
-<====Onsen]*/
 
 const iC    = {off:'QRTSIndIcons',in_progress:'QRTSIndIcons QRTSIndIconsSPIN',ok:'QRTSIndIcons QRTSIndIconsOK',err:'QRTSIndIcons QRTSIndIconsERR'}
 const iCc   = {off:'rgba(0,0,0,1)',in_progress:'rgba(142,36,170,1)',ok:'rgba(139,255,74,1)',err:'rgba(255,57,53,1)'}
@@ -131,7 +64,7 @@ class TCG extends Component {
   componentDidMount = function() {
   //   When component has mounted, initialise QRData structure
   //and generate a test QR code:
-//   this.props.updateContentCam({sd0:this......});
+  //this.props.updateContentCam({sd0:this......});
    this.props.updateSizeCam({width:'100%',height:'100%'});
   }
 
@@ -142,7 +75,6 @@ class TCG extends Component {
          <div className='QRTestStatus'>
          <div className='QRTSIndAndTxt'>
            <div className='QRTSIndicators'>
-{/*[mui====>*/}
             <div className='QRTSIndIconsContWr'>
              <div className='QRTSIndIconsContIco'>
               <div className={this.iCok(this.props.tcgData.smsSendState.currentState)}>&#x2714;</div>
@@ -188,51 +120,18 @@ class TCG extends Component {
               </div>
              </div>
             </div> {/*end -- QRTSIndIconsContWr*/}
-{/*<====mui]*/}
            </div>{/*end -- QRTSIndicators*/}
-{/*[mui====>*/}           <div className='QRTStext' dangerouslySetInnerHTML={{__html:this.props.tcgData.uiStatTopVal}}></div> {/*<====mui]*/}
+           <div className='QRTStext' dangerouslySetInnerHTML={{__html:this.props.tcgData.uiStatTopVal}}></div>
           </div>{/*end -- QRTSIndAndTxt*/}
          </div>{/*end -- QRTestStatus_IndAndTxt*/}
          <hr className='hrClass1'/>
          <div className='preSetsToEnc'>
-{/*[Onsen====>
-          <Ons.Select select-id = 'mySel' 
-                      id        = 'choose-sel' 
-                      value     = {this.props.tcgData.uiSelVal} 
-                      modifier  = 'underbar'
-                      onChange  = {this.props.onSelChange}
-                      className = 'encodeTestDataSel'>
-           {itemsSel}
-          </Ons.Select>
-{<====Onsen]*/}
-{/*[mui====>
-          <SelectField
-           id                 = 'mySel'
-           className          = 'encodeTestDataSel'
-           value              = {this.props.tcgData.uiSelVal}
-           onChange           = {this.props.onSelChange}
-           autoWidth          = {false}
-           menuItemStyle      = {{fontSize:'1em',lineHeight:'1.2em',minHeight:'1.2em'}}
-           floatingLabelText  = 'Data pre-sets'
-           floatingLabelStyle = {{fontSize:'1em',outline:'1px dotted white',left:0}}>
-           {itemsSel}
-          </SelectField>  
-<====mui]*/}
-{/*[EUI====>*/}
-{/*<EUIInputGroup contiguous>
- <EUIInputGroup.Section>*/}
+
           <EUIFormSelect className = 'encodeTestDataSel'
                          value     = {this.props.tcgData.uiSelVal}
                          onChange  = {this.props.onSelChange}
                          options   = {itemsSel}
                          firstOption = "Select"/>
-{/* </EUIInputGroup.Section>*/}
-{/*<====EUI]*/}
-{/*[EUI====>*/}
-{/*On click it should hide QR icon to the right, 
-slide word 'Encode' right to take up place it's vacated and 
-make the spinner appear to the left. And vice versa.*/}
-{/* <EUIInputGroup.Section>*/}
           <EUIButton 
            className='encBtn'
            type='default-success'
@@ -240,40 +139,9 @@ make the spinner appear to the left. And vice versa.*/}
            onClick   = {this.props.onPressEnc}>
            Encode
           </EUIButton>
-{/* </EUIInputGroup.Section>
-</EUIInputGroup>*/}
-{/*<====EUI]*/}
-{/*[Onsen====>
-          <Ons.Button 
-           className = 'encBtn'
-           onClick   = {this.props.tcgData.onPressEnc}
-           ripple    = {true}
-           modifier  = 'material'>
-           Encode <Ons.Icon icon='fa-qrcode' size={20} />
-          </Ons.Button>
-<====Onsen]*/}
-{/*[mui====>
-          <RaisedButton 
-           className     = 'encBtn' 
-           label         = 'Encode' 
-           labelPosition = 'before' 
-           onTouchTap    = {this.props.tcgData.onPressEnc}
-           icon          = {<QRGenIcon/>}/>
-<====mui]*/}
+
          </div>
          <hr className='hrClass2'/>
-{/*[Onsen====>
-            <Ons.Input
-              inputId     = 'sndAddr'
-              className   = 'andAddr'
-              value       = {this.props.tcgData.uiAddrVal}
-              onChange    = {this.props.onTxtAddrChange}
-              modifier    = 'material'
-              float
-              placeholder = 'SMS to: +7(123)456-7890' />
-
-<====Onsen]*/}
-{/*[mui====>*/}
         <TextField
           id                 = 'sndAddr' 
           value              = {this.props.tcgData.uiAddrVal}
@@ -281,37 +149,11 @@ make the spinner appear to the left. And vice versa.*/}
           floatingLabelText  = 'SMS Recipient(s) phone(s)'
           fullWidth          = {true}
           className          = 'sndAddr'/>
-{/*<====mui]*/}
-{/*[Onsen====>
-        <textarea 
-          className         = 'txtArea textarea textarea--transparent'
-          value             = {this.props.tcgData.uiTxtArVal}
-          onChange          = {this.props.onTxtArChange}
-          rows='10' 
-          placeholder=''>
-        </textarea>
-<====Onsen]*/}
-{/*[RT2====>
-        <RT2Input
-          className         = 'txtArea'
-          type              = 'text'
-          floating          = {false}
-          maxLength         = {8192}
-          multiline         = {true}
-          rows              = {20}
-          value             = {this.props.tcgData.uiTxtArVal}
-          onChange          = {this.props.onTxtArChange}/>
-<====RT2]*/ /*label={this.props.tcgData.uiTxtArStat}*/}
-{/*[mui====>*/}
         <TextField
           type                     = 'text'
           className                = 'txtArea'
-/*          textareaStyle            =*/
-/*          style                    =*/
           multiLine                = {true}
           floatingLabelFixed       = {false}
-/*          floatingLabelFocusStyle  =*/
-/*          floatingLabelShrinkStyle =*/
           floatingLabelStyle       = {{left:'5px'}}
           floatingLabelText        = {this.props.tcgData.uiTxtArVal.length + ' characters so far.'}
           rows                     = {9}
@@ -319,19 +161,7 @@ make the spinner appear to the left. And vice versa.*/}
           fullWidth                = {true}
           value                    = {this.props.tcgData.uiTxtArVal}
           onChange                 = {this.props.onTxtArChange}/>
-          {/*errorText                = 'Error text'*/}
-{/*<====mui]*/}
-{/*[EUI====>
-          <EUIFormInput 
-           placeholder       = 'Textarea' 
-           className         = 'txtArea'
-           maxLength         = {8192}
-           value             = {this.props.tcgData.uiTxtArVal}
-           onChange          = {this.props.onTxtArChange}
-           rows              = {20}
-           multiline />
-<====EUI]*/}
-{/*[EUI====>*/}
+
           <EUIButton 
            type='default-success'
            className = 'sndBtn'
@@ -339,34 +169,11 @@ make the spinner appear to the left. And vice versa.*/}
            onClick   = {this.props.onPressSnd}>
            Send
           </EUIButton>
-{/*<====EUI]*/}
-{/*[mui====>
-         <RaisedButton className     = 'sndBtn' 
-                       label         = 'Send' 
-                       labelPosition = 'before' 
-                       onTouchTap    = {this.props.tcgData.onPressSnd}/>
-<====mui]*/}
+
         </div>
         <div className='CamGroup'>
 {/*<FC fcData={this.props.qrData.fcData} flipItFC={this.props.flipQR}/>*/}
          <div className='UITestGroup'>
-{/*[RBS====>
-            <MUIRadioGroup className='IndMiniTestGroup' name='smsSpinnerTestGroup' value={this.props.tcgData.smsSendState.currentState} onChange={this.props.setISMS}>
-             <div className='radioTitleWrapper'>SMS</div>
-             <div className='radioWrapper'>
-              <MUIRadioButton label='off'  value='off'/>
-             </div>
-             <div className='radioWrapper'>
-              <MUIRadioButton label='in_progress' value='in_progress'/>
-             </div>
-             <div className='radioWrapper'>
-              <MUIRadioButton label='ok'   value='ok'/>
-             </div>
-             <div className='radioWrapper'>
-              <MUIRadioButton label='err'  value='err'/>
-             </div>
-         </MUIRadioGroup>
-<====RBS]*/}
           <div className='IndTestGroup'>
            <div className='IndTitleWrapper'>Spinners</div>
            <div className='IndTestGroupInvis'>
@@ -393,11 +200,10 @@ make the spinner appear to the left. And vice versa.*/}
             </div> {/*IndMiniTestGroup*/}
            </div> {/*IndTestGroupInvis*/}
           </div> {/*IndTestGroup*/}
-
          </div>
         </div>
        </div>
-    );                   
+    );
   }
 }
 
