@@ -40,3 +40,10 @@ Live version of the React part of the app can be found [here](https://mzhukov197
   - [ ] Test those that are applicable to Pub part.
   - [x] ~~Move those, that are Priv-only to a stub Priv repository folder.~~
 - [x] ~~Add React apps' builds to local gh-pages as a live apps' GUI version (minus cordova base).~~
+- [ ] Add at least beta-level UI to the app:
+  - [ ] Add Settings page.
+  - [ ] Cleanup main page (with flip-QR).
+  - [ ] Add simple (Pub level) controls to main page UI.
+  - [ ] Add universal status display to main page UI.
+  - [ ] Move/Add testing/tuning controls to settings page entirely.
+  
