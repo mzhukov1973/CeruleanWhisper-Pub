@@ -21,7 +21,6 @@
 ## ToDo:
 - [x] ~~Refactor names etc to make it clear that this is the Pub part of the app and make placeholder for the Priv part.~~
 - [x] ~~Add licensing information.~~
-- [ ] Add architecture documentation as part of the projects' homepage at gh-pages (or, perhaps, create a separate repository just for docs? General docs that is, not app-part specific.
 - [ ] Iron out non-standard quirks from React app:
   - [ ] Clean up /public directory, move all importable assets from /public/index.html to import {...} statements inside modules.
   - [ ] Properly fill manifest.json for Pub part of the App (and this IS Pub).
