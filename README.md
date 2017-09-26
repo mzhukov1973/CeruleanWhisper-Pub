@@ -38,4 +38,4 @@
 - [ ] Implement classes for main objects, described in architecture docs:
   - [ ] Implement every class, descibed in architecture docs.
   - [ ] Test those that are applicable to Pub part.
-  - [ ] Move those, that are Priv-only to a stub Priv repository folder.
+  - [x] ~~Move those, that are Priv-only to a stub Priv repository folder.~~
