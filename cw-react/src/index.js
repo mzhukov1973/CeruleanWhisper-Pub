@@ -55,7 +55,7 @@ sagaMiddleware.run(rootSaga);
 const startIt = () => 
 { 
  render(
-     <BroweserRouter basename="CeruleanWhisper-Pub">
+     <BrowserRouter basename="CeruleanWhisper-Pub">
       <Provider store={store}>
        <MuiThemeProvider>
         <App/>
