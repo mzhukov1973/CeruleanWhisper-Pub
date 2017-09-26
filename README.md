@@ -38,3 +38,4 @@
   - [ ] Implement every class, descibed in architecture docs.
   - [ ] Test those that are applicable to Pub part.
   - [x] ~~Move those, that are Priv-only to a stub Priv repository folder.~~
+- [ ] Add React apps' builds to local gh-pages as a live apps' GUI version (minus cordova base).

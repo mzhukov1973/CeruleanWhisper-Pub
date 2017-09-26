@@ -15,6 +15,7 @@
 /****************************************************************************/
 import React from 'react'
 import { render } from 'react-dom'
+import { BrowserRouter } from 'react-router-dom'
 /*[mui====>*/
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
@@ -39,13 +40,12 @@ import registerServiceWorker from './registerServiceWorker'
                      }
 
 const sagaMiddleware = createSagaMiddleware();
-//N.B.: Don't forget to remove devtools-related extensions from production version!
+
 let store = createStore(
                         mainReducer,
                         initialState, 
                         compose (
                                  applyMiddleware(sagaMiddleware), 
-                                 window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() 
                                 )
                        );
 
@@ -55,11 +55,13 @@ sagaMiddleware.run(rootSaga);
 const startIt = () => 
 { 
  render(
+     <BroweserRouter basename="CeruleanWhisper-Pub">
       <Provider store={store}>
        <MuiThemeProvider>
         <App/>
        </MuiThemeProvider>
-      </Provider>,
+      </Provider>
+     </BrowserRouter>,
   document.getElementById('root')
 
  ); 
