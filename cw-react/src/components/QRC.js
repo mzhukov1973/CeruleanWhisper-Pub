@@ -77,12 +77,11 @@ class QRC extends Component {
    this.QRTopStatus     = this.instCSSRules['.QRTopStatus'].rule;
    this.QRTopStatus.style.width  = 'calc( '+this.props.qrData.width+'px - 0%)';
  }
-  
+
   componentDidMount = function() {
   //   When component has mounted, initialise QRData structure
   //and generate a test QR code:
    this.props.updateContent({sd0:this.qrCode.HTMLContent});
-
   }
 
   render() {
@@ -160,6 +159,6 @@ QRC.defaultProps = {
     updateContent:           PropTypes.func.isRequired,
     storeKeyFC:              PropTypes.func.isRequired
   }
-  
+
 
 export default QRC

@@ -1,0 +1,46 @@
+/****************************************************************************/
+/* Copyright 2017 Maxim Zhukov                                              */
+/*                                                                          */
+/* Licensed under the Apache License, Version 2.0 (the "License");          */
+/* you may not use this file except in compliance with the License.         */
+/* You may obtain a copy of the License at                                  */
+/*                                                                          */
+/*     http://www.apache.org/licenses/LICENSE-2.0                           */
+/*                                                                          */
+/* Unless required by applicable law or agreed to in writing, software      */
+/* distributed under the License is distributed on an "AS IS" BASIS,        */
+/* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. */
+/* See the License for the specific language governing permissions and      */
+/* limitations under the License.                                           */
+/****************************************************************************/
+* { -webkit-tap-highlight-color: rgba(0,0,0,0); } /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+
+:root
+{
+ --lh_em:1.2em;   /*default line height for components' elements everywhere*/
+ --lh_rem:1.2rem; /*default line height for components everywhere*/
+ min-height:100%;
+ font-size:12px;
+ line-height:var(--lh_rem);
+}
+
+
+body
+{
+ font-size:1rem;
+ line-height:var(--lh_rem);
+ font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+ -webkit-touch-callout:none;
+ -webkit-text-size-adjust:none;
+ -webkit-user-select:none;
+ width:100%;
+ margin:0;
+ padding:0;
+ background-color:#E4E4E4;
+/*
+ display:flex;
+ flex-flow:column nowrap;
+ justify-content:center;
+ align-items:center;
+*/
+}
