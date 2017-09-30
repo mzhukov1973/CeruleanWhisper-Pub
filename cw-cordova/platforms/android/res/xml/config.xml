@@ -4,11 +4,11 @@
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
-    <name>CeruleanWhisper</name>
+    <name>CeruleanWhisper-Pub</name>
     <description>
-        A protected comms Android app.
+        A protected comms Android app (Pub part).
     </description>
-    <author email="mzhukov31415dev@gmail.com" href="https://mzhukov1973.github.io/CeruleanWhisper">
+    <author email="mzhukov31415dev@gmail.com" href="">
         Maxim Zhukov
     </author>
     <content src="index.html" />
