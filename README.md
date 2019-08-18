@@ -17,7 +17,7 @@
 ###### CeruleanWhisper - a protected comms Android app.
 ###### Version 0.0.1
 ### CeruleanWhisper *Pub* part of the app.
-Live version of the React part of the app can be found [here](https://mzhukov1973.gitgub.io/CeruleanWhisper-Pub).
+~~Live version of the React part of the app can be found [here](https://mzhukov1973.gitgub.io/CeruleanWhisper-Pub).~~
 
 ## ToDo:
 - [x] ~~Refactor names etc to make it clear that this is the Pub part of the app and make placeholder for the Priv part.~~
